@@ -1,13 +1,13 @@
 // src/pages/BuilderPage.js
-import React from "react";
-import AppBreadcrumb from "../components/AppBreadcrumb";
+// import React from "react";
+// import AppBreadcrumb from "../components/AppBreadcrumb";
 
 import { useState } from "react";
 import {
   Box,
   Flex,
   Input,
-  Button,
+  // Button,
   Center,
   Tabs,
   TabList,
@@ -22,8 +22,9 @@ import {
   Tbody,
   Tr,
   Drawer,
+  Select,
   DrawerBody,
-  DrawerFooter,
+  // DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -39,7 +40,7 @@ import {
 import {
   EditIcon,
   SettingsIcon,
-  CloseIcon,
+  // CloseIcon,
   //   UpDownIcon,
   //   AtSignIcon,
   LinkIcon,
@@ -49,11 +50,11 @@ import ReactECharts from "echarts-for-react"; // Import the ECharts component
 
 const EditorPage = () => {
   // Example option for ECharts
-  const breadcrumbPaths = [
-    { label: "Home", to: "/" },
-    { label: "Sources", to: "/sources" },
-    { label: "Editor", to: "/editor" }, // Assuming this is the current page
-  ];
+  // const breadcrumbPaths = [
+  //   { label: "Home", to: "/" },
+  //   { label: "Sources", to: "/sources" },
+  //   { label: "Editor", to: "/editor" }, // Assuming this is the current page
+  // ];
 
   const option = {
     title: {
@@ -163,7 +164,6 @@ const EditorPage = () => {
               />
             </FormControl>
 
-            {/* Axis Title Inputs */}
             <FormControl id="x-axis-title" my="4">
               <FormLabel>X-Axis Title</FormLabel>
               <Input
@@ -176,13 +176,15 @@ const EditorPage = () => {
             </FormControl>
             <FormControl id="x-axis-type" my="4">
               <FormLabel>X-Axis Type</FormLabel>
-              <Input
+              <Select
                 value={chartOptions.xAxis.type}
-                type="text"
                 onChange={(e) =>
                   updateChartOption("xAxis.type", e.target.value)
                 }
-              />
+              >
+                <option value="time">Time</option>
+                <option value="category">Category</option>
+              </Select>
             </FormControl>
             <FormControl id="x-axis-name-gap" my="4">
               <FormLabel>

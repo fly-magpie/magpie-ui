@@ -41,11 +41,12 @@ const SourcePage = () => {
   ];
 
   const iconSize = useBreakpointValue({ base: "25px", md: "30px", lg: "35px" });
-  const bgColor = useColorModeValue("white", "orange.400"); // Adjust colors for light/dark mode
-  const hoverBgColor = useColorModeValue("orange.50", "orange.200");
+  const bgColor =  useColorModeValue("white", "orange.400");
+  // const hoverBgColor = useColorModeValue("orange.50", "orange.200");
+    const pageBgColor = useColorModeValue("orange.50", "orange.200");
 
   return (
-    <Flex direction={{ base: "column", md: "row" }} h="100vh" pt={20}>
+    <Flex direction={{ base: "column", md: "row" }} bg={pageBgColor} h="100vh" pt={20}>
       {/* Right Panel - Data Source Icons */}
       <Box flex="1" p="5">
         <Grid templateColumns="repeat(auto-fit, minmax(120px, 1fr))" gap={6}>
@@ -59,14 +60,16 @@ const SourcePage = () => {
               borderWidth="1px"
               borderRadius="md"
               display="flex"
+              boxShadow="md" // Add shadow
               flexDirection="column"
               alignItems="center"
               justifyContent="center"
               p="3"
               _hover={{
-                bg: hoverBgColor,
+                // bg: hoverBgColor,
                 borderColor: "orange.400",
                 transform: "scale(1.05)",
+                boxShadow: "xl", // Add shadow,
                 transition: "all .2s ease-in-out",
               }}
             >

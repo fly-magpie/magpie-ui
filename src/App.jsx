@@ -1,5 +1,5 @@
 // src/App.js
-import React from "react";
+
 import "@fontsource/poiret-one/400.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -9,7 +9,7 @@ import SourcePage from "./pages/SourcePage";
 import NavigationBar from "./components/NavBar";
 import PlaceholderPage from "./pages/PlaceHolderPage";
 // import SchemaBuilder from "./pages/SchemaBuilder";
-import Assistant from "./pages/Assiatant";
+import Assistant from "./pages/Assistant";
 
 import Theme from "./theme";
 

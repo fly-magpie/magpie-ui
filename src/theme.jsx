@@ -1,8 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 import "@fontsource/poiret-one";
-import "@fontsource/open-sans";
-import "@fontsource/raleway";
-
+import "@fontsource-variable/open-sans";
+import "@fontsource-variable/raleway";
 
 
 const Theme = extendTheme({

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -22,7 +23,7 @@ import {
 
 import {
   FcFilledFilter,
-  FcSalesPerformance,
+
   FcWorkflow,
 FcBarChart,
   FcBiomass,
@@ -84,8 +85,9 @@ const SearchBar = () => {
     lg: "30px",
   });
   const bgColor = useColorModeValue("white", "orange.400"); // Adjust colors for light/dark mode
-  const hoverBgColor = useColorModeValue("orange.50", "orange.200");
-  const pageBgColor = useColorModeValue("gray.50", "gray.900");
+  // const hoverBgColor = useColorModeValue("orange.50", "orange.200");
+  const pageBgColor = useColorModeValue("orange.50", "orange.100");
+  // const pageBgColor = useColorModeValue("gray.50", "gray.400");
   const suggestions = [
     "Create a graph for communters in London Tube in last 10 days",
     "Create a line chart for daily COVID-19 cases last 30 days",
@@ -125,8 +127,8 @@ const SearchBar = () => {
   return (
     <Center top={10} h="100vh" bg={pageBgColor}>
       <VStack spacing={6}>
-        <Image src="/magpie_logo1.svg" alt="Logo" boxSize="300px" />
-        <HStack top={20}>
+        <Image src="/magpie_logo1.svg" alt="Logo" boxSize="400px" />
+        <HStack top={15}>
           <Input
             placeholder={placeholder}
             size="lg"
@@ -182,7 +184,7 @@ const SearchBar = () => {
                   justifyContent="center"
                   p="3"
                   _hover={{
-                    bg: hoverBgColor,
+                    // bg: hoverBgColor,
                     borderColor: "orange.400",
                     transform: "scale(1.05)",
                     boxShadow: "xl", // Add shadow,
