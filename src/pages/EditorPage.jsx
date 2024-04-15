@@ -47,6 +47,7 @@ import {
   AddIcon,
 } from "@chakra-ui/icons";
 import ReactECharts from "echarts-for-react"; // Import the ECharts component
+import JSONEditorViewer from "../components/JSONEditorViewer";
 
 const EditorPage = () => {
   // Example option for ECharts
@@ -117,6 +118,10 @@ const EditorPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [activeDrawer, setActiveDrawer] = useState(null);
+
+  const handleJsonChange = (newJson) => {
+    setChartOptions(newJson);
+  };
 
   const toggleDrawer = (panel = null) => {
     if (panel) {
@@ -322,7 +327,7 @@ const EditorPage = () => {
                 px={4}
                 py={2}
               >
-                Graph View
+                Chart
               </Tab>
               <Tab
                 _selected={{
@@ -334,7 +339,19 @@ const EditorPage = () => {
                 px={4}
                 py={2}
               >
-                Table View
+                Data Table
+              </Tab>
+              <Tab
+                _selected={{
+                  // border: "1px",
+                  borderColor: "orange.400",
+                  color: "orange.400",
+                }}
+                // _focus={{ boxShadow: "none" }}
+                px={4}
+                py={2}
+              >
+                Code View
               </Tab>
             </TabList>
             <TabPanels h="full">
@@ -429,6 +446,14 @@ const EditorPage = () => {
                     ))}
                   </Tbody>
                 </Table>
+              </TabPanel>
+              <TabPanel h="full">
+                <Box p={4}>
+                  <JSONEditorViewer
+                    initialJson={chartOptions}
+                    onJsonChange={handleJsonChange}
+                  />
+                </Box>
               </TabPanel>
             </TabPanels>
           </Tabs>

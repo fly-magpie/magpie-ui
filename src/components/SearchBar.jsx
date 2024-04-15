@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -20,19 +19,19 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-
 import {
   FcFilledFilter,
-
   FcWorkflow,
-FcBarChart,
+  FcBarChart,
   FcBiomass,
   FcSurvey,
+  FcGenealogy,
   FcDatabase,
+  FcAddDatabase,
+  FcContacts,
+  FcDataSheet,
+  FcFilingCabinet,
 } from "react-icons/fc";
-
-
-
 
 const SearchBar = () => {
   const [inputValue, setInputValue] = useState(""); // State to hold the input value
@@ -43,33 +42,38 @@ const SearchBar = () => {
   };
 
   const handleButtonClick = () => {
-  navigate("/assistant", { state: { inputValue } }); // Navigate to /assistant and pass the input value as state
+    navigate("/assistant", { state: { inputValue } }); // Navigate to /assistant and pass the input value as state
   };
   const sources = [
     {
-      label: "Graphs",
+      label: "Components",
       icon: <Icon as={FcBarChart} />,
-      href: "/graphs",
+      href: "/components",
     },
     {
       label: "Data Sources",
-      icon: <Icon as={FcSurvey} />,
+      icon: <Icon as={FcAddDatabase} />,
       href: "/data-sources",
     },
     {
-      label: "Data Pipelines",
+      label: "Notebooks",
       icon: <Icon as={FcWorkflow} />,
-      href: "/pipelines",
+      href: "/notebooks",
     },
     {
       label: "Datastores",
-      icon: <Icon as={FcDatabase} />,
+      icon: <Icon as={FcDataSheet} />,
       href: "/datastores",
     },
     {
       label: "Queries",
       icon: <Icon as={FcFilledFilter} />,
       href: "/queries",
+    },
+    {
+      label: "Identities",
+      icon: <Icon as={FcContacts} />,
+      href: "/identities",
     },
 
     {
@@ -86,7 +90,7 @@ const SearchBar = () => {
   });
   const bgColor = useColorModeValue("white", "orange.400"); // Adjust colors for light/dark mode
   // const hoverBgColor = useColorModeValue("orange.50", "orange.200");
-  const pageBgColor = useColorModeValue("orange.50", "orange.100");
+  const pageBgColor = useColorModeValue("Yellow.50", "Yellow.100");
   // const pageBgColor = useColorModeValue("gray.50", "gray.400");
   const suggestions = [
     "Create a graph for communters in London Tube in last 10 days",
@@ -127,7 +131,7 @@ const SearchBar = () => {
   return (
     <Center top={10} h="100vh" bg={pageBgColor}>
       <VStack spacing={6}>
-        <Image src="/magpie_logo1.svg" alt="Logo" boxSize="400px" />
+        <Image src="/magpie_logo1.svg" alt="Logo" boxSize="250px" />
         <HStack top={15}>
           <Input
             placeholder={placeholder}

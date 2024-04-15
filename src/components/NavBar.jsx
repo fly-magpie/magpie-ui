@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Flex,
@@ -25,14 +26,14 @@ const NavigationBar = () => {
       { label: "Home", to: "/" },
       { label: "Data Sources", to: "/data-sources" },
     ],
-    "/pipelines/editor": [
+    "/components/editor": [
       { label: "Home", to: "/" },
-      { label: "Pipelines", to: "/pipelines" },
-      { label: "Editor", to: "/pipelines/editor" },
+      { label: "Components", to: "/components" },
+      { label: "Editor", to: "/components/editor" },
     ],
-    "/pipelines": [
+    "/notebooks": [
       { label: "Home", to: "/" },
-      { label: "Pipelines", to: "/pipelines" },
+      { label: "Notebooks", to: "/notesbooks" },
     ],
     "/datastores": [
       { label: "Home", to: "/" },
@@ -42,9 +43,13 @@ const NavigationBar = () => {
       { label: "Home", to: "/" },
       { label: "Queries", to: "/queries" },
     ],
-    "/graphs": [
+    "/components": [
       { label: "Home", to: "/" },
-      { label: "Graphs", to: "/graphs" },
+      { label: "Components", to: "/components" },
+    ],
+    "/identities": [
+      { label: "Home", to: "/" },
+      { label: "Identities", to: "/identities" },
     ],
     "/assistant": [
       { label: "Home", to: "/" },
@@ -85,7 +90,7 @@ const NavigationBar = () => {
           marginRight="10"
           marginLeft="5"
         >
-        <span color="orange">m</span>agpie
+          <span color="orange">m</span>agpie
         </Heading>
         {/* Conditionally render breadcrumbs based on the pathname */}
         {location.pathname !== "/" && (

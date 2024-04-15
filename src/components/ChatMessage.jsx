@@ -1,6 +1,14 @@
-import { Box,Avatar, Text,Wrap,WrapItem, Button, useColorModeValue } from "@chakra-ui/react";
+import React from "react";
+import {
+  Box,
+  Text,
+  Wrap,
+  WrapItem,
+  Button,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import ReactECharts from "echarts-for-react";
-function ChatMessage({ message, isAssistant, type = "text" }) {
+function ChatMessage({ message, isAssistant, type }) {
   const bgColor = useColorModeValue("orange.400", "orange.900");
   const color = useColorModeValue("white", "white");
 
@@ -29,14 +37,13 @@ function ChatMessage({ message, isAssistant, type = "text" }) {
       borderRadius="md"
       p={2}
       mb={2}
-      alignSelf={isAssistant ? "flex-end" : "flex-start"}
+      alignSelf={isAssistant ? "flex-start" : "flex-end"}
     >
       <Wrap>
         <WrapItem>
-
-      {/* <Avatar name={isAssistant ? "Assistant" : "User"} size="sm" mr={2} /> */}
-      {/* <span>&nbsp;</span> */}
-      {renderContent()}
+          {/* <Avatar name={isAssistant ? "Assistant" : "User"} size="sm" mr={2} /> */}
+          {/* <span>&nbsp;</span> */}
+          {renderContent()}
         </WrapItem>
       </Wrap>
     </Box>

@@ -1,9 +1,9 @@
 // UseApi.js
-
+import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function UseApi(url, method = "GET", body = null, headers = {}, query = {}) {
+function UseApi(url, method = "GET", body = {}, headers = {}, query = {}) {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ function UseApi(url, method = "GET", body = null, headers = {}, query = {}) {
   const fetchData = async () => {
 
     console.log({...body});
-    if (body && body.message === null) {
+    if (body && (body as { message: null }).message === null) {
       console.log("body.message is null");
       return;
     }

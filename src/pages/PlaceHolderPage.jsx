@@ -1,11 +1,12 @@
+import { Box, Heading, Text } from "@chakra-ui/react";
 
-import { Box, Heading, Text } from '@chakra-ui/react';
-
-function PlaceholderPage() {
+function PlaceholderPage({ name, details }) {
   return (
-    <Box padding="6" boxShadow="lg" bg="white">
-      <Heading as="h1" size="lg">This is a placeholder page</Heading>
-      <Text mt={4}>Content will be added soon...</Text>
+    <Box p={5} pt="20" boxShadow="lg" bg="white">
+      <Heading as="h1" size="lg">
+        {name}
+      </Heading>
+      <Text mt={4}>{details}</Text>
     </Box>
   );
 }

@@ -1,5 +1,6 @@
 // Assistant.js
 
+import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import {
@@ -21,18 +22,18 @@ function Assistant() {
   const inputValue = location.state?.inputValue;
   const [isAssistantThinking, setIsAssistantThinking] = useState(false);
   const [space] = useToken("space", [4]); // Fetch spacing value from theme, adjust the index for larger sizes
-  const bgColor = useColorModeValue("gray.100", "gray.800");
+  const bgColor = useColorModeValue("Yellow.50", "Yellow.100");
   const [messages, setMessages] = useState([
     {
       message: "Hello I am Magpie!, how can I help you today?",
       isAssistant: true,
+      type: "text",
     },
   ]);
   const chatInputBg = useColorModeValue("gray.200", "gray.600");
   const [newMessage, setNewMessage] = useState("");
 
   const inputRef = useRef();
-
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
@@ -42,10 +43,12 @@ function Assistant() {
     event.preventDefault();
     setMessages([
       ...messages,
-      { message: newMessage, type: "text", isAssistant: false },
+      { message: newMessage, isAssistant: false, type: "text" },
     ]);
     setNewMessage("");
-    inputRef.current.focus();
+    // if (inputRef.current) {
+    //   (inputRef.current as HTMLInputElement).focus();
+    // }
 
     // Simulate an API response
     setIsAssistantThinking(true);
@@ -53,7 +56,11 @@ function Assistant() {
       setIsAssistantThinking(false);
       setMessages((prevMessages) => [
         ...prevMessages,
-        { message: "This is a simulated API response.", isAssistant: true },
+        {
+          message: "This is a simulated API response.",
+          isAssistant: true,
+          type: "text",
+        },
       ]);
     }, 2000); // delay of 2 seconds
   };
@@ -62,10 +69,11 @@ function Assistant() {
       direction="column"
       height="100vh"
       bg={bgColor}
+      pt={20}
       padding={space}
       justifyContent="space-between"
     >
-      <VStack spacing={4} align="stretch" overflowY="auto">
+      <VStack mt={20} spacing={10} align="stretch" overflowY="auto">
         {messages.map((message, index) => (
           <ChatMessage
             key={index}
@@ -85,7 +93,7 @@ function Assistant() {
       <form onSubmit={handleSendMessage}>
         <InputGroup size="md">
           <Input
-            ref={inputRef}
+            // ref={inputRef}
             pr="4.5rem"
             type="text"
             placeholder="Type your message..."

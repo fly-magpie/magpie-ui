@@ -17,7 +17,7 @@ import {
   DatabricksIcon,
   SnowflakeIcon,
   MySQLIcon,
-  BigQueryIcon
+  BigQueryIcon,
 } from "../components/CustomIcons";
 
 const SourcePage = () => {
@@ -41,12 +41,17 @@ const SourcePage = () => {
   ];
 
   const iconSize = useBreakpointValue({ base: "25px", md: "30px", lg: "35px" });
-  const bgColor =  useColorModeValue("white", "orange.400");
+  const bgColor = useColorModeValue("white", "orange.400");
   // const hoverBgColor = useColorModeValue("orange.50", "orange.200");
-    const pageBgColor = useColorModeValue("orange.50", "orange.200");
+  const pageBgColor = useColorModeValue("Yellow.50", "Yellow.100");
 
   return (
-    <Flex direction={{ base: "column", md: "row" }} bg={pageBgColor} h="100vh" pt={20}>
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      bg={pageBgColor}
+      h="100vh"
+      pt={20}
+    >
       {/* Right Panel - Data Source Icons */}
       <Box flex="1" p="5">
         <Grid templateColumns="repeat(auto-fit, minmax(120px, 1fr))" gap={6}>
