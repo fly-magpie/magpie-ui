@@ -1,8 +1,48 @@
-# React + Vite
+# Magpie Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the frontend part of Magpie, a platform designed to simplify data visualization by integrating and visualizing data from various sources. This frontend application is built using React and Vite.
 
-Currently, two official plugins are available:
+## Goals
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication:** Allow users to log in securely.
+- **Data Source Integration:** Enable users to add custom REST API data sources.
+- **Data Visualization:** Provide an interface to visualize and manage data.
+- **User Experience:** Ensure a seamless and intuitive user experience.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed.
+
+### Contributing
+
+1. Fork the repository
+
+2. Create a new branch for your feature or bug fix
+
+   ```bash
+   git checkout -b feature/fix-name
+   ```
+
+3. Make your changes and commit them
+
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+
+4. Push to the branch
+   ```bash
+   git push origin feature/fix-name
+   ```
+5. Create a new Pull Request
+
+Please ensure your code adheres to our coding standards and includes appropriate tests. We appreciate your contributions!
+
+### License
+
+Project is released under the MIT license.
+
+### Contact
+
+If you have any questions or comments, please feel free to contact us at [magpie](mailto:hi@magpie.report).
