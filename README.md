@@ -15,7 +15,9 @@ Welcome to the frontend part of Magpie, a platform designed to simplify data vis
 
 - Node.js and npm installed.
 
-### Contributing
+## Contributing
+
+We welcome contributions to Magpie! Checkout the issues or suggest a new feature by opening an issue.
 
 1. Fork the repository
 
