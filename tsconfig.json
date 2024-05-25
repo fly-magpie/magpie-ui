@@ -14,7 +14,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["vitest/globals", "node", "jest", "@testing-library/jest-dom"]
+    "types": ["vitest/globals", "node", "jest", "@testing-library/jest-dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "references": [{ "path": "./tsconfig.node.json" }]
 }
