@@ -1,8 +1,10 @@
 import React from "react"
 import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
+import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 import App from "./App"
 import { store } from "./app/store"
+import { KINDE_DOMAIN, KINDE_CLIENT_ID } from "./env-variables"
 import "./index.css"
 
 const container = document.getElementById("root")
@@ -13,7 +15,14 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <KindeProvider
+          clientId={KINDE_CLIENT_ID}
+          domain={KINDE_DOMAIN}
+          logoutUri={window.location.origin}
+          redirectUri={window.location.origin}
+        >
+          <App />
+        </KindeProvider>
       </Provider>
     </React.StrictMode>,
   )

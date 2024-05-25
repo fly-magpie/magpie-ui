@@ -22,3 +22,4 @@ export type AppThunk<ThunkReturnType = void> = ThunkAction<
   unknown,
   Action
 >
+export type RootState = ReturnType<typeof store.getState>
