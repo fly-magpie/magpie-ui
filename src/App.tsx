@@ -1,9 +1,11 @@
+import { Button } from "@/components/ui/button"
 import "./App.css"
 
 const App = () => {
   return (
     <div className="App">
-      My react app
+      <div>My react app</div> 
+      <Button>Click me</Button>
     </div>
   )
 }
