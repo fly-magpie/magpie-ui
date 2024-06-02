@@ -1,0 +1,19 @@
+{
+    "types": [
+      { "type": "build", "section": "Features", "hidden": false, "description": "changes that affect the build system or external dependencies" },
+      { "type": "chore", "section": "", "hidden": true, "description": "changes that do not relate to a fix or feature and don't modify src or test files (for example updating dependencies)" },
+      { "type": "ci", "section": "", "hidden": true, "description": "continuous integration related" },
+      { "type": "docs", "section": "Document", "hidden": false, "description": "updates to documentation such as a the README or other markdown files" },
+      { "type": "feat", "section": "Features", "hidden": false, "description": "a new feature is introduced with the changes" },
+      { "type": "fix", "section": "Fixes", "hidden": false, "description": "a bug fix has occurred" },
+      { "type": "perf", "section": "Fixes", "hidden": false, "description": "performance improvements" },
+      { "type": "refactor", "section": "Fixes", "hidden": false, "description": "refactored code that neither fixes a bug nor adds a feature" },
+      { "type": "revert", "section": "Revert", "hidden": false, "description": "reverts a previous commit" },
+      { "type": "style", "section": "Style", "hidden": false, "description": "changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, and so on." },
+      { "type": "test", "section": "", "hidden": true, "description": "including new or correcting previous tests" }
+    ],
+    "commitUrlFormat": "{{host}}/{{owner}}/{{repository}}/commit/{{hash}}",
+    "compareUrlFormat": "{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}",
+    "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}",
+    "userUrlFormat": "{{host}}/{{user}}"
+}
